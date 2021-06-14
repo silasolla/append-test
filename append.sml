@@ -10,9 +10,6 @@ fun append_cps' xs ys =
   in append_cps_aux xs ys identity
   end
 
-val xs = List.tabulate (100, fn _ => 1)
-val ys = List.tabulate (100, fn _ => 2)
-
 fun main () = case CommandLine.arguments () of
                 i :: j :: [k] =>
                   let val (xs, ys) = (List.tabulate ((valOf o Int.fromString) i, fn _ => 1),
